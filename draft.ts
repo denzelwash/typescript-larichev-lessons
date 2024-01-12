@@ -112,3 +112,25 @@ fetchWithAuth('/url', 'get')
 fetchWithAuth('/url', 'post')
 
 let e: 'literal' = 'literal'
+
+// Alias types
+type httpMethod = 'get' | 'post'
+
+function fetchWithAuthAliases(url: string, method: httpMethod) {}
+
+type userAlias = {
+	name: string
+	age: number
+	skills: string[]
+}
+
+type roleAlias = {
+	id: number
+}
+
+const userObj: userAlias & roleAlias = {
+	id: 1,
+	name: 'name',
+	age: 30,
+	skills: ['dev', 'devops']
+}
