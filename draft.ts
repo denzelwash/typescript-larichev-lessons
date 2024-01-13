@@ -170,3 +170,33 @@ const userObjInterfaceSecond: userWithRoleInterfaceSecond = {
 interface userDic {
 	[index: number]: userInterface
 }
+
+// Optional
+interface UserOptional {
+	login: string
+	password?: string
+}
+
+const userOptional: UserOptional = {
+	login: 'name',
+	password: 'password'
+}
+
+function multiply(firstNum: number, secondNum?: number): number {
+	if (!secondNum) {
+		return firstNum * firstNum
+	} else {
+		return firstNum * secondNum
+	}
+}
+
+interface UserOptionalSecond {
+	login: string
+	password?: {
+		type: 'primary' | 'secondary'
+	}
+}
+
+function testPass(user: UserOptionalSecond) {
+	console.log(user.password?.type)
+}
