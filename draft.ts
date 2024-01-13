@@ -134,3 +134,39 @@ const userObj: userAlias & roleAlias = {
 	age: 30,
 	skills: ['dev', 'devops']
 }
+
+// Interface
+interface userInterface {
+	name: string
+	age: number
+	skills: string[]
+}
+
+interface userWithIdInterface extends userInterface {
+	id: number
+}
+
+interface userWithRoleInterfaceSecond extends userInterface, userWithIdInterface {
+	createdAt: Date
+	log: (id: number) => number
+}
+
+const userObjInterface: userWithIdInterface = {
+	id: 1,
+	name: 'name',
+	age: 30,
+	skills: ['dev', 'devops']
+}
+
+const userObjInterfaceSecond: userWithRoleInterfaceSecond = {
+	id: 1,
+	name: 'name',
+	age: 30,
+	skills: ['dev', 'devops'],
+	createdAt: new Date(),
+	log: (id) => id
+}
+
+interface userDic {
+	[index: number]: userInterface
+}
