@@ -206,12 +206,6 @@ function logIdVoid(id: string | number): void {
 	console.log(id)
 }
 
-function multiplyVoid(a: number, b?: number): number | void {
-	if (!b) {
-		return a * a
-	}
-}
-
 type voidFunc = () => void
 
 const f1: voidFunc = () => {}
@@ -229,3 +223,27 @@ const userVoid: { s: string[] } = {
 }
 
 skillsVoid.forEach((s) => userVoid.s.push(s))
+
+// Unknown
+let varUnknown: unknown
+varUnknown = 5
+
+function funcUnknown(a: unknown) {
+	if (typeof a === 'number') {
+		a++
+	} else {
+		console.log(a)
+	}
+}
+
+funcUnknown(varUnknown)
+
+async function fethDataUnknown() {
+	try {
+		await fetch('')
+	} catch (error) {
+		if (error instanceof Error) {
+			console.log(error.message)
+		}
+	}
+}
