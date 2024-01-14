@@ -200,3 +200,32 @@ interface UserOptionalSecond {
 function testPass(user: UserOptionalSecond) {
 	console.log(user.password?.type)
 }
+
+// Void
+function logIdVoid(id: string | number): void {
+	console.log(id)
+}
+
+function multiplyVoid(a: number, b?: number): number | void {
+	if (!b) {
+		return a * a
+	}
+}
+
+type voidFunc = () => void
+
+const f1: voidFunc = () => {}
+
+const f2: voidFunc = () => {
+	return true
+}
+
+const f3 = f2()
+
+const skillsVoid = ['dev', 'devops']
+
+const userVoid: { s: string[] } = {
+	s: []
+}
+
+skillsVoid.forEach((s) => userVoid.s.push(s))
