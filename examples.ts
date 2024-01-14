@@ -298,3 +298,47 @@ const userNull = getUserNull()
 if (userNull) {
 	console.log(userNull.name)
 }
+
+// Приведение типов
+let a1 = 5
+let a2: string = a1.toString()
+let a3: string = new String(a1).valueOf()
+let a4: boolean = new Boolean(a1).valueOf()
+
+let a5 = 'string'
+let a6: number = parseInt(a5)
+
+interface IUserConversion {
+	name: string
+	email: string
+	login: string
+}
+
+const userConversion: IUserConversion = {
+	name: 'Vasia',
+	email: 'vasia@mail.ru',
+	login: 'vasia'
+}
+
+const userConversionSecond = {
+	name: 'Vasia',
+	email: 'vasia@mail.ru',
+	login: 'vasia'
+} as IUserConversion
+
+interface IAdmin {
+	name: string
+	role: number
+}
+
+const adminConversion: IAdmin = {
+	...userConversion,
+	role: 1
+}
+
+function userToAdmin(user: IUserConversion): IAdmin {
+	return {
+		name: user.name,
+		role: 1
+	}
+}
