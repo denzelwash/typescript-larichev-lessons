@@ -342,3 +342,51 @@ function userToAdmin(user: IUserConversion): IAdmin {
 		role: 1
 	}
 }
+
+// Type guard
+function logIdGuard(id: string | number): void {
+	if (typeof id === 'string') {
+		console.log(id)
+	} else {
+		console.log(id)
+	}
+}
+
+function logIdGuardSecond(id: string | number): void {
+	if (isString(id)) {
+		console.log(id)
+	} else {
+		console.log(id)
+	}
+}
+
+function isString(x: string | number): x is string {
+	return typeof x === 'string'
+}
+
+interface IUserGuard {
+	name: string
+	email: string
+	login: string
+}
+
+interface IAdminGuard {
+	name: string
+	role: number
+}
+
+function isAdminGuard(user: IUserGuard | IAdminGuard): user is IAdminGuard {
+	return 'role' in user
+}
+
+function isAdminGuardAlternative(user: IUserGuard | IAdminGuard): user is IAdminGuard {
+	return (user as IAdminGuard).role !== undefined
+}
+
+function setRoleZero(user: IUserGuard | IAdminGuard): void {
+	if (isAdminGuard(user)) {
+		user.role = 0
+	} else {
+		throw new Error('Пользователь не админ')
+	}
+}
