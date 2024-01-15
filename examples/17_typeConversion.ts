@@ -1,4 +1,3 @@
-// Приведение типов
 let a = 5
 let b: string = a.toString()
 let c: string = new String(a).valueOf()
