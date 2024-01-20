@@ -106,4 +106,7 @@
 		// "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
 		"skipLibCheck": true /* Skip type checking all .d.ts files. */
 	}
+	// "files": ["oop/1_base.ts"] // Компилировать только эти файлы
+	// "include": ["/my_folder/**/app*"] // Компилировать по паттерну
+	// "exclude": ["app.ts"] // Исключить файлы из компиляции
 }
