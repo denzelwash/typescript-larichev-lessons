@@ -3,8 +3,8 @@ interface IUSerService {
   getUsersInDatabase(): number
 }
 
-@nullUser
-@threeUserAdvanced
+@NullUser
+@ThreeUserAdvanced
 class UserService implements IUSerService {
   users: number = 1000
   getUsersInDatabase(): number {
@@ -12,11 +12,11 @@ class UserService implements IUSerService {
   }
 }
 
-function nullUser(target: Function) {
+function NullUser(target: Function) {
   target.prototype.users = 0
 }
 
-function threeUserAdvanced<T extends { new (...args: any[]): {} }>(constructor: T) {
+function ThreeUserAdvanced<T extends { new (...args: any[]): {} }>(constructor: T) {
   return class extends constructor {
     users = 3
   }

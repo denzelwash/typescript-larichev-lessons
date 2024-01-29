@@ -6,7 +6,7 @@ interface IUSerService {
   getUsersInDatabase(): number
 }
 
-@createdAt
+@CreatedAt
 class UserService implements IUSerService {
   users: number = 1000
   getUsersInDatabase(): number {
@@ -14,14 +14,14 @@ class UserService implements IUSerService {
   }
 }
 
-function createdAt<T extends { new (...args: any[]): {} }>(constructor: T) {
+function CreatedAt<T extends { new (...args: any[]): {} }>(constructor: T) {
   return class extends constructor {
     createdAt = new Date()
   }
 }
 
-type CreatedAt = {
+type CreatedAtType = {
   createdAt: Date
 }
 
-console.log((new UserService() as IUSerService & CreatedAt).createdAt)
+console.log((new UserService() as IUSerService & CreatedAtType).createdAt)
