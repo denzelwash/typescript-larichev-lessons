@@ -1,0 +1,22 @@
+{
+  "name": "typescript-larichev-lessons",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/denzelwash/typescript-larichev-lessons.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/denzelwash/typescript-larichev-lessons/issues"
+  },
+  "homepage": "https://github.com/denzelwash/typescript-larichev-lessons#readme",
+  "dependencies": {
+    "reflect-metadata": "^0.2.1"
+  }
+}
